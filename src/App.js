@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavBar from './layout/Navbar';
-import Dashboard from './dashboard/Dashboard';
+import NavBar from './components/layout/Navbar';
+import Dashboard from './components/dashboard/Dashboard';
+import ProjectDetails from './components/projects/ProjectDetails'
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route path='/' component={Dashboard}></Route>
+          <Route exact path='/' component={Dashboard}></Route>
+          <Route exact path='/project/:id' component={ProjectDetails}></Route>
         </Switch>
       </div>
     </BrowserRouter>
